@@ -44,7 +44,7 @@ nav a:hover{background:#ffffff14}
 nav img{height:34px;display:block;margin:0 12px 0 8px}
 nav .contacto{background:var(--texto);color:#000}
 nav .contacto:hover{background:#fff}
-nav .lang{font-size:12px;padding:10px 14px;border-radius:99px;background:none;border:0;cursor:pointer;color:#cfcfd4}
+nav .lang{white-space:nowrap;font-size:12px;padding:10px 14px;border-radius:99px;background:none;border:0;cursor:pointer;color:#cfcfd4}
 nav .lang b{color:#fff;font-weight:400}
 
 /* ---------- Tipografía común ---------- */
@@ -170,6 +170,8 @@ footer{padding:26px 16px 34px;display:flex;justify-content:space-between;font-si
 @media(max-width:1100px){.pieza.dest h3{font-size:32px}}
 @media(max-width:760px){
   nav a:not(.contacto){display:none}
+  nav.vidrio{top:12px;padding:5px}nav img{height:28px;margin:0 6px 0 6px}nav .lang{padding:8px 10px}nav a{padding:9px 14px}
+  .pieza.dest,.pieza.dest.der{aspect-ratio:4/5!important}
   .rejilla{grid-template-columns:repeat(2,1fr);gap:10px}
   .pieza.dest,.pieza.dest.der{grid-column:span 2;grid-row:span 1;aspect-ratio:9/16}.cap-cab{flex-direction:column;align-items:start}.cap-cab p{text-align:left}
   .pieza{border-radius:20px}.pieza h3{font-size:18px}.pieza p{font-size:12px}.pieza .mas{display:none}
@@ -278,7 +280,7 @@ capsEl.innerHTML=CAPITULOS.map(([k,nom,txt,items],ci)=>{
 // ---------- Letras ----------
 document.querySelectorAll('[data-letras]').forEach(partir);
 function partir(el){const base=parseFloat(el.dataset.retraso||0);let i=0;
-  el.innerHTML=[...el.textContent].map(c=>c===' '?' ':`<span class="letra" style="transition-delay:${(base+0.04*i++).toFixed(2)}s">${c}</span>`).join('');}
+  el.innerHTML=el.textContent.split(' ').map(w=>`<span style="white-space:nowrap;display:inline-block">${[...w].map(c=>`<span class="letra" style="transition-delay:${(base+0.04*i++).toFixed(2)}s">${c}</span>`).join('')}</span>`).join(' ');}
 
 // ---------- Entrada ----------
 const entrada=document.getElementById('entrada'),hero=document.getElementById('hero');
