@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Noé Cruz Mata</title>
-<meta name="description" content="Edición de video especializada en redes sociales. Edición, animación y color para marcas.">
+<meta name="description" content="Editor de video especializado en redes sociales. Edición, animación y color para marcas.">
 <link rel="icon" href="assets/logo/noe-simbolo-blanco.png">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,800;62..125,900&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
@@ -52,6 +52,7 @@ nav .lang b{color:#fff;font-weight:400}
 .grande{font-family:var(--titulo);font-weight:900;font-stretch:70%;font-size:clamp(84px,12.5vw,190px);line-height:.84;letter-spacing:-.025em;text-transform:uppercase}
 .medio{font-family:var(--titulo);font-weight:900;font-stretch:70%;font-size:clamp(64px,8vw,130px);line-height:.86;letter-spacing:-.02em;text-transform:uppercase}
 .fina{font-family:var(--fina);font-weight:200;font-size:clamp(30px,4.2vw,64px);letter-spacing:-.01em;line-height:1.05;margin-top:.12em}
+.titulo .grande{line-height:.8}.titulo .fina{margin-top:-.08em;line-height:1}
 .letra{display:inline-block;opacity:0;transform:translateY(.5em) scale(.9);filter:blur(12px);transition:opacity .9s var(--suave),transform 1.1s var(--suave),filter .9s var(--suave)}
 .listo .letra{opacity:1;transform:none;filter:none}
 .aparece{opacity:0;transform:translateY(18px);transition:opacity 1s var(--suave),transform 1s var(--suave)}
@@ -200,8 +201,8 @@ footer{padding:26px 16px 34px;display:flex;justify-content:space-between;font-si
   <div class="pegado">
     <div class="titulo" id="titulo">
       <span class="hola aparece" style="transition-delay:.9s" data-t="hola">hola, soy Noé</span>
-      <h1 class="grande" data-letras data-t="h1">Edición de video</h1>
-      <div class="fina" data-letras data-retraso="0.45" data-t="h2">especializada en redes sociales.</div>
+      <h1 class="grande" data-letras data-t="h1">Editor de video</h1>
+      <div class="fina" data-letras data-retraso="0.45" data-t="h2">especializado en redes sociales.</div>
       <div class="botones aparece" style="transition-delay:1.3s"><a class="pildora llena" href="#trabajo" data-t="b1">ver el trabajo</a><a class="pildora vidrio" href="#contacto" data-t="b2">hablemos</a></div>
     </div>
     <div class="escena" id="escena">
@@ -258,7 +259,7 @@ const CAPITULOS=[
   ['luxe2','Estética láser','Animaciones profesionales'],['why3','Seguros','B-roll'],['why2','Seguros','Subtítulos animados'],['claudia3','Seguros','Edición y color']]],
  ['casa','Casa y diseño','inmobiliarias, cocinas y espacios.',[
   ['epk-airbnb','Rentas vacacionales','Animaciones profesionales'],['indoma-reforma','Inmobiliaria','Animaciones profesionales'],['tkw1','Cocinas','Producto'],['gm-cocina','Gabinetes','Producto'],['epk-beliving','Departamentos','Recorrido'],
-  ['indoma-oficina','Inmobiliaria','Entrevista'],['gm-taller','Gabinetes','Detrás de cámaras'],['tkw3','Gabinetes a medida','Producto'],['gm-guardado','Gabinetes','Producto'],['epk-thehub','Espacios','Recorrido']]],
+  ['indoma-oficina','Inmobiliaria','Entrevista'],['tkw3','Gabinetes a medida','Producto'],['gm-guardado','Gabinetes','Producto'],['epk-thehub','Espacios','Recorrido']]],
  ['comida','Comida','producto, antojo y personalidad.',[
   ['bakery1','Panadería','Producto'],['selecta-resena','Restaurante','Animaciones profesionales'],['bakery2','Panadería','Historia de marca'],['selecta-almendra','Restaurante','Producto']]],
  ['deporte','Deporte y movimiento','técnica, ritmo y energía.',[
@@ -340,7 +341,7 @@ final.addEventListener('pointermove',e=>{if(e.target.closest('.botones'))return;
   const t=performance.now();if(t-ult>90&&Math.hypot(x-lx,y-ly)>70){ult=t;lx=x;ly=y;pegar(x,y)}});
 
 // ---------- Español / inglés ----------
-const EN={entrar:'tap to enter',nav1:'work',nav2:'about',nav3:"let's talk",hola:"hi, I'm Noé",h1:'Video editing',h2:'specialized in social media.',b1:'see the work',b2:"let's talk",
+const EN={entrar:'tap to enter',nav1:'work',nav2:'about',nav3:"let's talk",hola:"hi, I'm Noé",h1:'Video editor',h2:'specialized in social media.',b1:'see the work',b2:"let's talk",
  'mi-hola':'in six months','mi-txt':'<b>reels delivered</b> for brands in the US, Spain, Panama and Mexico. Editing, professional animation, DaVinci color and sound in every one.',
  'mi-nota':"I come from graphic design, so I protect the brand in every frame.",
  'tr-hola':"what I've made",'tr-h':'Work',f0:'all',f1:'health & insurance',f2:'real estate',f3:'sports',f4:'food',f5:'brands & culture',
