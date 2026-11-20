@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Noé Cruz Mata</title>
 <meta property="og:title" content="Noé Cruz Mata · Editor de video">
-<meta property="og:description" content="Editor de video especializado en redes sociales. +300 reels para marcas de Estados Unidos, España, Panamá y México.">
+<meta property="og:description" content="Editor de video especializado en redes sociales. Reels para marcas de Estados Unidos, España, Panamá y México.">
 <meta property="og:image" content="https://noeportafolio.github.io/assets/og2.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="627">
 <meta property="og:url" content="https://noeportafolio.github.io/">
@@ -85,7 +85,7 @@ nav .lang b{color:#fff;font-weight:400}
 
 /* ---------- Sobre mí ---------- */
 .mi{padding:20vh 6vw 16vh;text-align:center;position:relative;background:var(--texto);color:#0A0A0B;border-radius:40px;margin:0 16px}
-.mi .num{font-family:var(--titulo);font-weight:900;font-stretch:70%;font-size:clamp(150px,26vw,420px);line-height:.8;letter-spacing:-.04em;color:#0A0A0B;font-variant-numeric:tabular-nums}
+.mi .num{font-family:var(--titulo);font-weight:900;font-stretch:70%;font-size:clamp(110px,17vw,280px);line-height:.8;letter-spacing:-.03em;color:#0A0A0B;font-variant-numeric:tabular-nums}
 .mi .fina{max-width:900px;margin:22px auto 0;font-size:clamp(24px,2.6vw,40px);line-height:1.25}
 .mi .fina b{font-weight:400;color:#000}
 .mi .nota{margin:34px auto 0;font-size:17px;color:var(--gris);max-width:560px;line-height:1.6}
@@ -226,9 +226,9 @@ footer{padding:26px 16px 34px;display:flex;justify-content:space-between;font-si
 <section class="mi claro" id="mi">
   <div class="mi-foto aparece"><img src="assets/foto/flow/9-iphone-b.jpg" alt="Noé Cruz Mata"></div>
   <div class="mi-txt">
-  <span class="hola aparece" data-t="mi-hola">hasta hoy</span>
-  <div class="num aparece"><span id="contador">0</span>+</div>
-  <div class="fina aparece" data-t="mi-txt"><b>reels entregados</b> para marcas de Estados Unidos, España, Panamá y México.</div>
+  <span class="hola aparece" data-t="mi-hola">lo que hago</span>
+  <div class="num aparece">REELS</div>
+  <div class="fina aparece" data-t="mi-txt"><b>para marcas</b> de Estados Unidos, España, Panamá y México: salud, inmobiliaria, comida, deporte y marca personal.</div>
   
   <p class="nota aparece" data-t="mi-nota">Vengo del diseño gráfico, por eso cuido la marca en cada cuadro.</p>
   </div>
@@ -315,10 +315,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 document.querySelectorAll('.mi .aparece,.mi-foto,.cabeza .aparece,.cabeza .medio,.pieza,.cap-cab').forEach(el=>io.observe(el));
 document.querySelectorAll('.pieza').forEach((p,i)=>p.style.transitionDelay=(i%4*0.08)+'s');
 
-// ---------- Contador 300 ----------
-const cont=document.getElementById('contador');let hecho=false;
-new IntersectionObserver(es=>{if(es[0].isIntersecting&&!hecho){hecho=true;const t0=performance.now();
- (function f(t){const p=Math.min(1,(t-t0)/2200);cont.textContent=Math.round(300*(1-Math.pow(1-p,4)));if(p<1)requestAnimationFrame(f)})(t0)}},{threshold:.4}).observe(cont);
 
 // ---------- Piezas: video al pasar / al verse en celular ----------
 const tactil=matchMedia('(hover:none)').matches;
@@ -337,7 +333,7 @@ document.getElementById('cerrar').onclick=cerrar;visor.onclick=e=>{if(e.target==
 // ---------- Stickers ----------
 const final=document.querySelector('.final');
 const fotos=TRABAJOS.map(t=>t[0]);
-const textos=[['300+','m'],['color',''],['motion',''],['davinci','m'],['reels',''],['hook','m'],['wow','s'],['b-roll',''],['noé','s'],['4K','m']];
+const textos=[['color',''],['motion',''],['davinci','m'],['reels',''],['hook','m'],['wow','s'],['b-roll',''],['noé','s'],['4K','m']];
 let ult=0,n=0,lx=0,ly=0;
 function pegar(x,y){const d=document.createElement('div');d.style.setProperty('--r',(Math.random()*30-15).toFixed(1)+'deg');const k=[0,3,0,0][n++%4];
   if(k===0||k===2){d.className='sticker foto';d.innerHTML=`<img src="assets/posters/${fotos[Math.floor(Math.random()*fotos.length)]}.jpg" alt="">`}
@@ -349,7 +345,7 @@ final.addEventListener('pointermove',e=>{if(e.target.closest('.botones'))return;
 
 // ---------- Español / inglés ----------
 const EN={entrar:'tap to enter',nav1:'work',nav2:'about',nav3:"let's talk",hola:"hi, I'm Noé",h1:'Video editor',h2:'specialized in social media.',b1:'see the work',b2:"let's talk",
- 'mi-hola':'to date','mi-txt':'<b>reels delivered</b> for brands in the US, Spain, Panama and Mexico.',
+ 'mi-hola':'what I do','mi-txt':'<b>for brands</b> in the US, Spain, Panama and Mexico: health, real estate, food, sports and personal brands.',
  'mi-nota':"I come from graphic design, so I protect the brand in every frame.",
  'tr-hola':"what I've made",'tr-h':'Work',f0:'all',f1:'health & insurance',f2:'real estate',f3:'sports',f4:'food',f5:'brands & culture',
  'fin-hola':'shall we make it together?','fin-h':"Let's talk",'fin-txt':'your next reel starts here.','fin-b1':'email me','fin-cursor':'move your cursor'};
